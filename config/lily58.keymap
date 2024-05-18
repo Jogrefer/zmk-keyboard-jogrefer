@@ -1,33 +1,43 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
-ZMK_UNICODE_PAIR(n_tilde,   N0, N0, F, N1,   N0, N0, D, N1)
+ * Copyright (c) 2020 The ZMK Contributors. SPDX-License-Identifier: MIT.
+*/
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+ZMK_UNICODE_PAIR(n_tilde,   N0, N0, F, N1,   N0, N0, D, N1)
+
+// ZMK_LAYER(default_layer,
+//     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+//          &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT
+//     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//          &hrm LGUI A   &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G             &kp M         &hrm RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LGUI O
+//     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//          &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SEMI
+//     // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//                                      &kp ESC       &lt NAV SPACE &kp TAB           &kp RET       &bs_del_num   &ss_cw
+//     //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+// )
+
 / {
-    keymap {
-        compatible = "zmk,keymap";
+	keymap {
+		compatible = "zmk,keymap";
 
-        default_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  F  |  M  |  N   |  G   |  X   |                   |  W   |  V    |  B    |  P   |   Y   |   -   |
-            // |  CTRL |  D  |  T  |  R   |  S   |  L   |   F5   |  |   ;   |  J   |  A    |  E    |  O   |   I   |   '   |
-            // | SHIFT |  Z  |  Q  |  H   |  C   |  K   |   "["  |  |  "]"  |  Ñ   |  U    |  ,    |  .   |   /   | SHIFT |
-            // |   <   |  >  |  =  | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |  {   |   }   |   ~   |
+		default_layer {
+			// ------------------------------------------------------------------------------------------------------------
+			// |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
+			// |  TAB  |  F  |  M  |  N   |  G   |  X   |                   |  W   |  V    |  B    |  P   |   Y   |   -   |
+			// |  CTRL |  D  |  T  |  R   |  S   |  L   |   F5   |  |   ;   |  J   |  A    |  E    |  O   |   I   |   '   |
+			// | SHIFT |  Z  |  Q  |  H   |  C   |  K   |   "["  |  |  "]"  |  Ñ   |  U    |  ,    |  .   |   /   | SHIFT |
+			// |   <   |  >  |  =  | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |  {   |   }   |   ~   |
 
-            bindings = <
+			bindings = <
 &kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                            &kp N6  &kp N7    &kp N8     &kp N9   &kp N0   &kp GRAVE
 &kp TAB    &kp F   &kp M   &kp N     &kp G     &kp X                             &kp W   &kp V     &kp B      &kp P    &kp Y    &kp MINUS
 &kp LCTRL  &kp D   &kp T   &kp R     &kp S     &kp L   &kp F5          &kp SEMI  &kp J   &kp A     &kp E      &kp O    &kp I    &kp SQT
 &kp LSHFT  &kp Z   &kp Q   &kp H     &kp C     &kp K   &kp LBKT        &kp RBKT  &kp n_tilde   &kp U     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
 &kp LT     &kp GT  &kp EQUAL  &kp LALT  &kp LGUI  &mo 0   &kp SPACE    &kp RET   &mo 0   &kp BSPC  &kp RGUI   &kp LBKT   &kp RBKT   &kp TILDE     
-            >;
-        };
-    };
+			>;
+		};
+	};
 };
