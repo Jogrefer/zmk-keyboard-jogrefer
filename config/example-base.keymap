@@ -1,4 +1,4 @@
-// Copy from https://github.com/urob/zmk-config/blob/main/config/base.keymap
+ // Copy from https://github.com/urob/zmk-config/blob/main/config/base.keymap
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
