@@ -1,0 +1,5 @@
+config SHIELD_JOGREFER_RIGHT
+	def_bool $(shields_list_contains,jogrefer_right)
+
+	config SHIELD_JOGREFER_LEFT
+	def_bool $(shields_list_contains,jogrefer_left)

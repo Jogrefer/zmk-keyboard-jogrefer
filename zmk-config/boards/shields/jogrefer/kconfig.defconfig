@@ -1,0 +1,16 @@
+if SHIELD_JOGREFER_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "jogrefer"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_JOGREFER_LEFT || SHIELD_JOGREFER_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
