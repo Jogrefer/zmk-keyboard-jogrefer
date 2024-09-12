@@ -1,4 +1,5 @@
 #include <behaviors.dtsi>
+#include <definitions.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -13,14 +14,14 @@
 //				│  ⭾  F  M  N  G  X	╰──╮   ╭──╯  W  V  B  P  Y  -  │
 //				│  ⇪  D  T  R  S  L  Ç  │   │  ⏍  U  A  E  O  I  +	 │
 //				│  ´  Z  Q  H  C  K  [  │   │  <  Ñ  J  ,  .  /  ⇪  │
-//				│  ⌘  ⌗  ⏍  ⌥  ␣  ←  ]	│   │  ⌘  ↩︎  ␣  ←  ↑  →  ↓  │
+//				│  ⌗  ⌃  ⌥  ⌘  ␣  ←  ]	│   │  ⌘  ↩︎  ␣  ←  ↑  ↓  →  │
 //				╰───────────────────────╯   ╰───────────────────────╯
 
-				&kp  &kp  &kp  &kp  &kp  &kp            &kp  &kp  &kp  &kp  &kp  &kp
-				&kp  &kp  &kp  &kp  &kp  &kp            &kp  &kp  &kp  &kp  &kp  &kp
-				&kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp
-				&kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp
-				&kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp  &kp
+				&kp ESC    &kp N1    &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6      &kp N7    &kp N8     &kp N9   &kp N0    &kp NUBS
+				&kp TAB    &kp F     &kp M    &kp N    &kp G     &kp X                       &kp W       &kp V     &kp B      &kp P    &kp Y     &kp _MINUS
+				&kp LSHIFT &kp D     &kp T    &kp R    &kp S     &kp L   &kp TILDE &kp APOS  &kp U       &kp A     &kp E      &kp O    &kp I     &kp _PLUS
+				&kp GRAVE  &kp Z     &kp Q    &kp H    &kp C     &kp K   &kp RBKT  &kp EQUAL &kp NTILDE &kp J     &kp _COMMA &kp _DOT &kp SLASH &kp RSHIFT
+				&kp        &kp LCTRL &kp LALT &kp LCMD &kp SPACE &kp DEL &kp LBKT  &kp RCMD  &kp ENTER   &kp SPACE &kp LEF  T &kp UP   &kp DOWN  &kp RIGHT
 
 			>;
 		};
