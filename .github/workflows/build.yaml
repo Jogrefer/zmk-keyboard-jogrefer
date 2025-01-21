@@ -37,7 +37,7 @@ jobs:
         west build -b nrf52840_m2 -d build/nrf52840_m2 app/ # Replace 'jogrefer' with your actual board name
 
     - name: Upload firmware artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: zmk-firmware
         path: build/zmk/jogrefer.uf2  # Adjust the path as necessary
