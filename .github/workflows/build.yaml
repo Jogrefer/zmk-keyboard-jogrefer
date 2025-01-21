@@ -1,0 +1,43 @@
+name: Build ZMK Firmware
+
+on:
+  push:
+    branches:
+      - jogrefer-layout-v1  # Replace 'main' with your branch name if different
+  pull_request:
+    branches:
+      - jogrefer-layout-v1  # Replace 'main' with your branch name if different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install west and other dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install west
+        sudo apt-get install -y ninja-build gperf dfu-util device-tree-compiler wget
+
+    - name: Initialize west and update
+      run: |
+        west init -l app/
+        west update
+
+    - name: Build firmware
+      run: |
+        west build -b nrf52840_m2 -d build/nrf52840_m2 app/ # Replace 'jogrefer' with your actual board name
+
+    - name: Upload firmware artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: zmk-firmware
+        path: build/zmk/jogrefer.uf2  # Adjust the path as necessary
