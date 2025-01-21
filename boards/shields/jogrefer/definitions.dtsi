@@ -1,8 +1,5 @@
-// La ñÑ?
-// ZMK_UNICODE_PAIR(n_tilde,   N0, N0, F, N1,   N0, N0, D, N1) // ñ/Ñ
+ZMK_UNICODE_PAIR(n_tilde,   N0, N0, F, N1,   N0, N0, D, N1) // ñ/Ñ
 ZMK_UNICODE_PAIR(NTILDE,   N0, N0, F, N1,   N0, N0, D, N1) // ñ/Ñ
-
-// Geek letters
 
 // Letters forms
 ZMK_UNICODE_PAIR(el_alpha,       N0, N3,  B, N1,    N0, N3, N9, N1) // α/Α
@@ -38,8 +35,6 @@ ZMK_UNICODE_PAIR(el_kappa_sym,   N0, N3,  F, N0,    N0, N3, N9,  A) // ϰ/Κ
 ZMK_UNICODE_PAIR(el_pi_sym,      N0, N3,  D, N6,    N0, N3,  A, N9) // ϖ/Ω
 ZMK_UNICODE_PAIR(el_rho_sym,     N0, N3,  F, N1,    N0, N3,  A, N1) // ϱ/Ρ
 ZMK_UNICODE_PAIR(el_phi_sym,     N0, N3,  C, N6,    N0, N3,  A, N6) // φ/Φ
-
-/* Russian letters */
 
 // Common Letters
 ZMK_UNICODE_PAIR(ru_a    ,    N0 , N4 , N3 , N0 ,    N0 , N4 , N1 , N0) // а/А
@@ -81,7 +76,6 @@ ZMK_UNICODE_PAIR(ru_yeyo ,    N0 , N4 , N3 ,  N5,    N0 , N4 , N5 , N1) // е/ё
 ZMK_UNICODE_PAIR(ru_tone ,    N0 , N4 , N4 ,  C ,    N0 , N4 , N4 ,  A) // ь/ъ
 
 /* Currency*/
-
 ZMK_UNICODE_SINGLE(curr_dollar, N0, N0, N2, N4)  // $ (Dollar)
 ZMK_UNICODE_SINGLE(curr_cent, N0, N0, A, N2)  // ¢ (Cent)
 ZMK_UNICODE_SINGLE(curr_pound, N0, N0, A, N3)  // £ (Pound)
