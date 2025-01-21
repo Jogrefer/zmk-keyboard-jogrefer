@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -30,13 +30,14 @@ jobs:
 
     - name: Initialize west and update
       run: |
-        cd $GITHUB_WORKSPACE 
-        west init -l app/
+        cd $GITHUB_WORKSPACE
+        west init -l
         west update
 
     - name: Build firmware
       run: |
-        west build -b nrf52840_m2 -d build/nrf52840_m2 app/ # Replace 'jogrefer' with your actual board name
+        west build -b nrf52840_m2 -d build/nrf52840_m2
+      #Replace 'jogrefer' with your actual board name
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v3
