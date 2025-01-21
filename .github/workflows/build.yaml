@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        path: .  # Clona el repositorio directamente en $GITHUB_WORKSPACE
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -31,12 +33,12 @@ jobs:
     - name: Initialize west and update
       run: |
         cd $GITHUB_WORKSPACE
-        west init -l
+        west init -l .
         west update
 
     - name: Build firmware
       run: |
-        west build -b nrf52840_m2 -d build/nrf52840_m2
+        west build -b nrf52840_m2 -d build/nrf52840_m2 .
       #Replace 'jogrefer' with your actual board name
 
     - name: Upload firmware artifact
