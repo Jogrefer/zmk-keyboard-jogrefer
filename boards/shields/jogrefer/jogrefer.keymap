@@ -1,8 +1,12 @@
 #include <behaviors.dtsi>
 #include <definitions.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/bt.h>
+#include <input/processors.dtsi>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20 
+#include <dt-bindings/zmk/pointing.h>
 
 / {
 	behaviors {
@@ -38,40 +42,44 @@
 
 		fn {		// 1
 			bindings = <
-				&trans  &kp &kp &kp &kp &kp             &kp &kp &kp &kp &kp &kp
-				&trans  &kp &kp &kp &kp &kp             &kp &kp &kp &kp &kp &kp
-				&trans  &kp &kp &kp &kp &kp &kp &to 3   &kp &kp &kp &kp &kp &kp
-				&trans  &kp &kp &kp &kp &kp &kp &kp     &kp &kp &kp &kp &kp &kp
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &HOME  &PAGE_UP  &PAGE_DOWN  &END
+				&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &kp F11
+				&trans   &kp     &kp     &kp     &kp     &kp                     &kp     &kp     &kp     &kp     &kp          &kp
+				&trans   &kp     &kp     &kp     &kp     &kp     &kp     &to 2   &kp     &kp     &kp     &kp     &kp          &kp
+				&trans   &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp          &kp
+				&trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &HOME  &PAGE_UP  &PAGE_DOWN  &END
 			>;
 		};
 
-		layer_2 {		// 2
-			bindings = <
-				&to 0    &kp &kp &kp &kp &kp             &kp &kp &kp &kp &kp &kp
-				&kp      &kp &kp &kp &kp &kp             &kp &kp &kp &kp &kp &kp
-				&kp      &kp &kp &kp &kp &kp &kp &to 3   &kp &kp &kp &kp &kp &kp
-				&kp      &kp &kp &kp &kp &kp &kp &kp     &kp &kp &kp &kp &kp &kp
-				&trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-			>;
-		};
-
-		mouse_bluetooth {		// 3
+		mouse_bluetooth {		// 2
 
 			&mkp_input_listener {
 				input-processors = <&zip_temp_layer 2 2000>;
- 			}
+ 			};
 
- 			&mmv_input_listener {
+ 			&mmv_input_listener {	//Input Processors
  				input-processors = <&zip_temp_layer 2 2000>;
- 			}
+ 			};
+
+ 			&mmv {	//Mouse Move
+				x-input-code = <INPUT_REL_X>;
+ 				y-input-code = <INPUT_REL_Y>;
+ 				time-to-max-speed-ms = <800>;
+ 				acceleration-exponent = <1.12>;
+ 			};
+
+ 			&msc {	//Mouse Scroll
+				x-input-code = <INPUT_REL_HWHEEL>;
+				y-input-code = <INPUT_REL_WHEEL>;
+				time-to-max-speed-ms = <400>;
+				acceleration-exponent = <1.1>;
+			};
 
 			bindings = <
-				&to 0   &kp     &kp     &kp     &kp     &kp                     &kp       &kp              &kp           &kp             &kp              &kp
-				&kp     &kp     &kp     &kp     &kp     &kp                     &mkp MB4  &mkp MB1         &mkp MB3      &mkp MB2        &mkp MB5         &kp
-				&kp     &kp     &kp     &kp     &kp     &kp     &kp     &to     &kp       &mmv MOVE_LEFT   &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp
-				&kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp       &msc SCRL_LEFT   &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans           &trans        &trans          &trans           &trans
+				&to 0                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &none      &none           &none           &none           &none            &none
+				&kp TAB              &bt BT_CLR    &bt BT_NXT    &bt BT_PVR    &bt BT_DISC   &none                             &mkp MB4   &mkp MB1        &mkp MB3        &mkp MB2        &mkp MB5         &none
+				&mt LSHIFT CAPSLOCK  &none         &none         &none         &none         &none         &none     &to 0     &none      &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
+				&none                &none         &none         &none         &none         &none         &none     &none     &none      &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &RSHIFT
+				&trans               &kp LCTRL     &kp LALT      &kp LCMD      &kp SPACE     &kp DEL       &kp RBKT  &kp RCMD  &kp ENTER  &kp SPACE       &kp LEFT        &kp UP          &kp DOWN         &kp RIGHT
 			>;
 		};
 
