@@ -5,16 +5,16 @@
 / {
 	keymap {
 		compatible = "zmk,keymap";
-		debounce-scan-period-ms = <5>;
 		default_layer {
 			bindings = <
 				/*
+				06 08 17 20 22 24 100   11 104 106 31 29 02 115
 				╭────────────────────╮   ╭────────────────────╮
-				│  ×  1  2  3  4  5	│   │  6  7  8  9  0  \  │
-				│  ⭾  F  M  N  G  X	╰───╯  W  V  B  P  Y  -  │
-				│  ⇪  D  T  R  S  L  Ç   ⏍  U  A  E  O  I  +	 │
-				│  ´  Z  Q  H  C  K  [   <  Ñ  J  ,  .  /  ⇪  │
-				│  ⌗  ⌃  ⌥  ⌘  ␣  ←  ]   ⌘  ↩︎  ␣  ←  ↑  ↓  →  │
+				│  ×  1  2  3  4  5	│   │  6  7  8  9  0  \  │   113
+				│  ⭾  F  M  N  G  X	╰───╯  W  V  B  P  Y  -  │   111
+				│  ⇪  D  T  R  S  L  Ç   ⏍  U  A  E  O  I  +	 │   10
+				│  ´  Z  Q  H  C  K  [   <  Ñ  J  ,  .  /  ⇪  │   09
+				│  ⌗  ⌃  ⌥  ⌘  ␣  ←  ]   ⌘  ↩︎  ␣  ←  ↑  ↓  →  │   101
 				╰─────────────────────────────────────────────╯
 				*/
 				&kp ESC    &kp N1    &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6     &kp N7    &kp N8     &kp N9   &kp N0    &kp NUBS
