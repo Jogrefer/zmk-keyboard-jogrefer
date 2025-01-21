@@ -23,7 +23,6 @@
 		retro-tap;
 
 		default_layer {
-			bindings = <
 				/* ╭────────────────────╮   ╭────────────────────╮
 					│  ×  1  2  3  4  5	│   │  6  7  8  9  0  \  │
 					│  ⭾  F  M  N  G  X	╰───╯  W  V  B  P  Y  -  │
@@ -31,22 +30,23 @@
 					│  ´  Z  Q  H  C  K  [   <  Ñ  J  ,  .  /  ⇪  │
 					│  m  ⌃  ⌥  ⌘  ␣  ←  ]   ⌘  ↩︎  ␣  ←  ↑  ↓  →  │
 					╰─────────────────────────────────────────────╯ */
-				&kp ESC              &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                         &kp N6      &kp N7     &kp N8      &kp N9    &kp N0     &kp NUBS
-				&kp TAB              &kp F      &kp M     &kp N     &kp G      &kp X                          &kp W       &kp V      &kp B       &kp P     &kp Y      &kp _MINUS
-				&mt LSHIFT CAPSLOCK  &kp D      &kp T     &kp R     &kp S      &kp L    &kp TILDE  &tog 2     &kp U       &kp A      &kp E       &kp O     &kp I      &kp _PLUS
-				&kp GRAVE            &kp Z      &kp Q     &kp H     &kp C      &kp K    &kp LBKT   &kp EQUAL  &kp NTILDE  &kp J      &kp _COMMA  &kp _DOT  &kp SLASH  &kp RSHIFT
-				&lt 1 GLOBE          &kp LCTRL  &kp LALT  &kp LCMD  &kp SPACE  &kp DEL  &kp RBKT   &kp RCMD   &kp ENTER   &kp SPACE  &kp LEFT    &kp UP    &kp DOWN   &kp RIGHT
+			bindings = <
+				&kp ESC              &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                               &kp N6      &kp N7     &kp N8      &kp N9    &kp N0     &kp NUBS
+				&kp TAB              &kp F      &kp M     &kp N     &kp G      &kp X                                &kp W       &kp V      &kp B       &kp P     &kp Y      &kp _MINUS
+				&mt LSHIFT CAPSLOCK  &kp D      &kp T     &kp R     &kp S      &kp L          &kp TILDE  &tog 2     &kp U       &kp A      &kp E       &kp O     &kp I      &kp _PLUS
+				&kp GRAVE            &kp Z      &kp Q     &kp H     &kp C      &kp K          &kp LBKT   &kp EQUAL  &kp NTILDE  &kp J      &kp _COMMA  &kp _DOT  &kp SLASH  &kp RSHIFT
+				&lt 1 GLOBE          &kp LCTRL  &kp LALT  &kp LCMD  &kp SPACE  &kp BACKSPACE  &kp RBKT   &kp RCMD   &kp ENTER   &kp SPACE  &kp LEFT    &kp UP    &kp DOWN   &kp RIGHT
 			>;
 		};
 
 
 		fn {		// 1
 			bindings = <
-				&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &kp F11
-				&trans   &kp     &kp     &kp     &kp     &kp                     &kp     &kp     &kp     &kp     &kp          &kp
-				&trans   &kp     &kp     &kp     &kp     &kp     &kp     &to 2   &kp     &kp     &kp     &kp     &kp          &kp
-				&trans   &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp     &kp          &kp
-				&trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &HOME  &PAGE_UP  &PAGE_DOWN  &END
+				&kp F12         &kp F1             &kp F2        &kp F3            &kp F4      &kp F5                   &kp F6           &kp F7        &kp F8     &kp F9     &kp F10          &kp F11
+				&kp SCROLLLOCK  &kp C_VOL_UP       &kp C_BRI_UP  &kp               &kp         &kp                      &kp PRINTSCREEN  &kp KP_N7     &kp KP_N8  &kp KP_N9  &kp              &trans
+				&trans          &kp C_VOLUME_DOWN  &kp C_BRI_DN  &kp               &kp         &kp      &kp     &to 2   &kp PAUSE_BREAK  &kp KP_N4     &kp KP_N5  &kp KP_N6  &kp KP_MULTIPLY  &trans
+				&trans          &kp C_MUTE         &kp C_NEXT    &kp C_PLAY_PAUSE  &kp C_PREV  &kp      &kp     &kp     &kp KP_NUMLOCK   &kp KP_N1     &kp KP_N2  &kp KP_N3  &trans           &kp INSERT
+				&trans          &trans             &trans        &trans            &trans      &kp DEL  &trans  &trans  &trans           &kp KP_EQUAL  &HOME      &PAGE_UP   &PAGE_DOWN       &END
 			>;
 		};
 
