@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          path: zmk-config
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -25,16 +27,18 @@ jobs:
           sudo apt-get -f install
       - name: Initialize west
         run: |
+          cd zmk-config
           west init -l .
-          west config manifest.path $GITHUB_WORKSPACE/west.yml
+          west config manifest.path west.yml
           cd ..
       - name: West update
         run: |
+          cd zmk-config
           west -v update --path zmk-config
       - name: West build
         run: |
           cd zmk-config
-          west build -b nice_nano_v2 -p always --path zmk-config
+          west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
         with:
