@@ -31,7 +31,7 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: v3.4.0 # o la versión que necesites
+      revision: main
       path: zephyr
 
 # include:
