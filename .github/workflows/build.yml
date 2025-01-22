@@ -26,12 +26,12 @@ jobs:
           sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util device-tree-compiler wget python3-venv
           sudo apt-get -y -f install
           pip3 install -U west
-          pip3 install -r zephyr/scripts/requirements-base.txt
+#          pip3 install -r zephyr/scripts/requirements-base.txt
       - name: Initialize west and Folder Structure
         run: |
           cd zmk-config
           west init -l app/
-        # west config manifest.path zmk-config
+          west config manifest.path zmk-config
       - name: West update
         run: |
           west update
