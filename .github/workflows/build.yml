@@ -30,7 +30,7 @@ jobs:
           cd zmk-config
           tree
           west -v init -l
-          west -v config manifest.path .
+          west -v config manifest.file="west.yml"
           cd ..
       - name: West update
         run: |
