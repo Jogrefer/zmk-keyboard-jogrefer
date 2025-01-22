@@ -5,27 +5,26 @@
 # pass flags to the build command and `artifact-name` to assign a name to
 # distinguish build outputs from each other:
 
+#  - board: nice_nano_v2 # nrf52840_m2
+
+---
 manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-
     - name: zephyrproject-rtos
       url-base: https://github.com/zephyrproject-rtos
-
   projects:
     - name: zmk-config
       remote: zmkfirmware
-      revision: main # O un tag/commit específico
+      revision: main
       path: .
-
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: main # O un tag/commit específico
+      revision: main
       path: zephyr
-
 include:
-  - board: nice_nano_v2 #nrf52840_m2
+  - board: nice_nano_v2
     shield: jogrefer
     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
     artifact-name: jogrefer

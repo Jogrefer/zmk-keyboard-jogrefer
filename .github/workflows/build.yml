@@ -1,48 +1,42 @@
+---
 name: Build ZMK Firmware
-
 on:
   push:
-    branches: [ "jogrefer-layout-v1" ]  # Replace 'main' with your branch name if different
+    branches:
+      - jogrefer-layout-v1
   pull_request:
-    branches: [ "jogrefer-layout-v1" ]  # Replace 'main' with your branch name if different
-
+    branches:
+      - jogrefer-layout-v1
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository #code
-      uses: actions/checkout@v3
-
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.x'
-
-    - name: Install west and other dependencies
-      run: |
-        sudo apt update
-        python -m pip install --upgrade pip
-        pip3 install -U west
-        sudo apt-get -f install
-
-    - name: Initialize west
-      run: |
-        west init -l .
-        west config manifest.path .
-
-    - name: West update
-      run: |
-        cd .
-        west update
-
-    - name: West build
-      run: |
-        cd build
-        west build -b nice_nano_v2 -p always
-
-    - name: Upload firmware artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: zmk-firmware
-        path: zmk-config/build/jogrefer.uf2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+      - name: Install west and other dependencies
+        run: |
+          sudo apt update
+          python -m pip install --upgrade pip
+          pip3 install -U west
+          sudo apt-get -f install
+      - name: Initialize west
+        run: |
+          west init -l .
+          west config manifest.path ../west.yml
+      - name: West update
+        run: |
+          cd .
+          west update
+      - name: West build
+        run: |
+          cd build
+          west build -b nice_nano_v2 -p always
+      - name: Upload firmware artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: zmk-firmware
+          path: zmk-config/build/jogrefer.uf2
