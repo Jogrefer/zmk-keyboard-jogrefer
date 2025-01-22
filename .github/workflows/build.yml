@@ -13,40 +13,37 @@ jobs:
     steps:
     - name: Checkout repository #code
       uses: actions/checkout@v4
-      with:
-        path: zmk-config  # Clona el repositorio directamente en $GITHUB_WORKSPACE
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v3
       with:
         python-version: '3.x'
 
     - name: Install west and other dependencies
       run: |
-        pip install west
         sudo apt-get update
         python -m pip install --upgrade pip
+        pip install west
         sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util device-tree-compiler wget
 
     - name: Initialize west
       run: |
-        cd $GITHUB_WORKSPACE
-        west init -l .
-        west config manifest.path west.yml
-        cd $GITHUB_WORKSPACE
+        west init -l zmk-config
+        west config manifest.path ../west.yml
+        cd ..
 
       - name: West update
         run: |
-          cd $GITHUB_WORKSPACE
+          cd zmk-config
           west update
 
       - name: West build
         run: |
-          cd $GITHUB_WORKSPACE/build
+          cd build
           west build -b nice_nano_v2 -p always
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v3
       with:
         name: zmk-firmware
-        path: build/jogrefer.uf2
+        path: zmk-config/build/jogrefer.uf2
