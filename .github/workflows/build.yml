@@ -21,10 +21,10 @@ jobs:
 
     - name: Install west and other dependencies
       run: |
-        sudo apt-get update
-        python -m pip install --upgrade pip
-        pip install west
-        sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util dtc wget
+        sudo apt update
+        python -m pip3 install --upgrade pip3
+        pip3 install -U west
+        sudo apt install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util dtc wget
 
     - name: Initialize west
       run: |
