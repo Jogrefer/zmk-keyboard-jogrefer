@@ -23,8 +23,8 @@ jobs:
         run: |
           sudo apt update
           python -m pip install --upgrade pip
-          pip install -U west
-          pip install -r zephyr/scripts/requirements-base.txt
+          pip3 install -U west
+          pip3 install -r zephyr/scripts/requirements-base.txt
           sudo apt-get -f install
       - name: Initialize west and Folder Structure
         run: |
