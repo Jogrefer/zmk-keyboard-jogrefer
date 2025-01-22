@@ -29,7 +29,6 @@ jobs:
           west config manifest.path ../west.yml
       - name: West update
         run: |
-          cd .
           west update
       - name: West build
         run: |
