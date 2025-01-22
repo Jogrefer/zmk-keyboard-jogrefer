@@ -4,24 +4,25 @@
 # to the `include` property. You can also use the `cmake-args` property to
 # pass flags to the build command and `artifact-name` to assign a name to
 # distinguish build outputs from each other:
-#  - board: nice_nano_v2 # nrf52840_m2
 
+#  - board: nice_nano_v2 # nrf52840_m2
+# include:
+#   - board: nice_nano_v2
+#     shield: jogrefer
+#     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
+#     artifact-name: jogrefer
 ---
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware/zmk
+      url-base: https://github.com/zmkfirmware
     - name: zephyrproject-rtos
-      url-base: https://github.com/zephyrproject-rtos/zephyr
+      url-base: https://github.com/zephyrproject-rtos
   projects:
-    - name: zmkfirmware
-      remote: zmk
+    # - name: zmk-config
+    #   remote: zmkfirmware
+    #   revision: main
+    - name: zephyr
+      remote: zephyrproject-rtos
       revision: main
-      import: app/west.yml
-    - name: zephyrproject-rtos
-      remote: zephyr
-  #   revision: zephyr-v3.5.0
-  #   path: zephyr
-  # include:
-  #   - board: nice_nano_v2
-  #     shield: jogrefer
+      path: zephyr

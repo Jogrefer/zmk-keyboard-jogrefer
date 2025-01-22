@@ -23,17 +23,19 @@ jobs:
         run: |
           sudo apt update
           python -m pip install --upgrade pip
-          pip3 install -U west
+          pip install -U west
+          pip install -r zephyr/scripts/requirements-base.txt
           sudo apt-get -f install
-          pwd
       - name: Initialize west and Folder Structure
         run: |
           cd zmk-config
-          west init -l
-          pwd
-          west config manifest.path zmk-config
+          west init -l app/
+        # west config manifest.path zmk-config
       - name: West update
-        run: west update
+        run: |
+          west update
+          west zephyr-export
+
       - name: Build
         run: |
           west build -b nice_nano_v2 -p always
