@@ -8,34 +8,44 @@
 #  - board: nice_nano_v2 # nrf52840_m2
 
 ---
-manifest:
-  remotes:
-    # - name: zmkfirmware
-      # url-base: https://github.com/zmkfirmware
-    - name: zephyrproject-rtos
-      url-base: https://github.com/zephyrproject-rtos
-  projects:
-    # - name: zmk-config
-    #   remote: zmkfirmware
-    #   revision: main
-    - name: zephyr
-      remote: zephyrproject-rtos
-      revision: zephyr-v3.5.0
-      path: zephyr
+# manifest:
+#   remotes:
+#     # - name: zmkfirmware
+#       # url-base: https://github.com/zmkfirmware
+#     - name: zephyrproject-rtos
+#       url-base: https://github.com/zephyrproject-rtos
+#   projects:
+#     # - name: zmk-config
+#     #   remote: zmkfirmware
+#     #   revision: main
+#     - name: zephyr
+#       remote: zephyrproject-rtos
+#       revision: zephyr-v3.5.0
+#       path: zephyr
+
+# manifest:
+#   remotes:
+#     - name: zephyrproject-rtos
+#       url-base: https://github.com/zephyrproject-rtos
+
+#   projects:
+#     - name: zephyr
+#       remote: zephyrproject-rtos
+#       revision: zephyr-v3.5.0
+#       path: zephyr
 
 manifest:
-  remotes:
-    - name: zephyrproject-rtos
-      url-base: https://github.com/zephyrproject-rtos
+    remotes:
+        - name: zmkfirmware
+          url-base: https://github.com/zmkfirmware
+    projects:
+        - name: zmk
+          remote: zmkfirmware
+          revision: main
+          import: app/west.yml
+    self:
+        path: build
 
-  projects:
-    - name: zephyr
-      remote: zephyrproject-rtos
-      revision: zephyr-v3.5.0
-      path: zephyr
-
-# include:
-#   - board: nice_nano_v2
-#     shield: jogrefer
-#     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
-#     artifact-name: jogrefer
+include:
+  - board: nice_nano_v2
+    shield: jogrefer
