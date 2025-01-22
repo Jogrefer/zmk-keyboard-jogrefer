@@ -29,7 +29,7 @@ jobs:
         run: |
           cd zmk-config
           west init -l
-          west config manifest.path west.yml
+          west config manifest
           cd ..
       - name: West update
         run: |
