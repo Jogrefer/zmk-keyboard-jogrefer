@@ -23,8 +23,8 @@ jobs:
         run: |
           sudo apt update
           python -m pip install --upgrade pip
-          sudo apt-get -yf install
-          sudo apt-get -yf python3-venv
+          sudo apt-get -y -f install
+          sudo apt-get -y -f python3-venv
           pip3 install -U west
           pip3 install -r zephyr/scripts/requirements-base.txt
       - name: Initialize west and Folder Structure
