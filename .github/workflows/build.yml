@@ -26,15 +26,15 @@ jobs:
       - name: Initialize west
         run: |
           west init -l .
-          west config manifest.path ../
+          west config manifest.path $GITHUB_WORKSPACE/west.yml
           cd ..
       - name: West update
         run: |
-          west -v update
+          west -v update --path zmk-config
       - name: West build
         run: |
           cd zmk-config
-          west build -b nice_nano_v2 -p always
+          west build -b nice_nano_v2 -p always --path zmk-config
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
         with:
