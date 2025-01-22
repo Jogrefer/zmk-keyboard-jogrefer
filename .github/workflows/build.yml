@@ -27,8 +27,10 @@ jobs:
           sudo apt-get -f install
       - name: Initialize west
         run: |
-          cd /
+          ls -a
+          cd zmk-config
           west init -l
+          west config manifest.path zmk-config
           cd ..
       - name: West update
         run: |
