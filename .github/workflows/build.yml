@@ -24,7 +24,7 @@ jobs:
         sudo apt-get update
         python -m pip install --upgrade pip
         pip install west
-        sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util device-tree-compiler wget
+        sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util dtc wget
 
     - name: Initialize west
       run: |
