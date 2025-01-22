@@ -13,18 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository #code
+    - name: Checkout code #repository
       uses: actions/checkout@v3
       with:
-        path: .  # Clona el repositorio directamente en $GITHUB_WORKSPACE
-
-      - name: Clean workspace # ¡NUEVO PASO!
-        run: rm -rf $GITHUB_WORKSPACE/* .git # Elimina todo excepto .git
-
-      - name: Checkout code (Cleaning) # ¡NUEVO PASO!
-        uses: actions/checkout@v3
-        with:
-          path: .
+        path: zmk-config  # Clona el repositorio directamente en $GITHUB_WORKSPACE
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -38,17 +30,25 @@ jobs:
       # python -m pip install --upgrade pip
         sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util device-tree-compiler wget
 
-    - name: Initialize west and update
+    - name: Initialize west
       run: |
         cd $GITHUB_WORKSPACE
         west init -l .
-        west update
+        west config manifest.path west.yml
+        cd $GITHUB_WORKSPACE
 
-    - name: Build firmware
-      run: west build -b nrf52840_m2 -d build/nrf52840_m2 .  #Replace 'jogrefer' with your actual board name
+      - name: West update
+        run: |
+          cd $GITHUB_WORKSPACE/zmk-config
+          west update
+
+      - name: West build
+        run: |
+          cd $GITHUB_WORKSPACE/zmk-config
+          west build -b nrf52840_m2 -d build/nrf52840_m2 .
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v3
       with:
         name: zmk-firmware
-        path: build/zmk/jogrefer.uf2  # Adjust the path as necessary
+        path: zmk-config/build/zephyr/zmk.uf2
