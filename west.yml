@@ -22,8 +22,8 @@ manifest:
       remote: zephyrproject-rtos
       revision: zephyr-v3.5.0
       path: zephyr
-  self:
-    path: build 
-  include:
-    - board: nice_nano_v2
-      shield: jogrefer
+  # self:
+  #   path: build 
+  # include:
+  #   - board: nice_nano_v2
+  #     shield: jogrefer
