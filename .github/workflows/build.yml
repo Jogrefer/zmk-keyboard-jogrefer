@@ -10,18 +10,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           path: zmk-config
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Checkout zmkfirmware
-        run: |
-          git clone https://github.com/zmkfirmware/zmkfirmware.git
-          cd zmkfirmware
-          git fetch --tags --force origin main
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -31,18 +24,18 @@ jobs:
           sudo apt update
           python -m pip install --upgrade pip
           pip3 install -U west
-          sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util device-tree-compiler wget
-          sudo apt-get -y -f install
-      - name: Initialize West
+          sudo apt-get -f install
+          pwd
+      - name: Initialize west and Folder Structure
         run: |
           cd zmk-config
           west init -l
+          pwd
           west config manifest.path zmk-config
       - name: West update
         run: west update
       - name: Build
         run: |
-          pwd
           west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
