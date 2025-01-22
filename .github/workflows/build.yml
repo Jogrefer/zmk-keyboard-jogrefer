@@ -32,15 +32,15 @@ jobs:
         west config manifest.path ../west.yml
         cd ..
 
-      - name: West update
-        run: |
-          cd zmk-config
-          west update
+    - name: West update
+      run: |
+        cd zmk-config
+        west update
 
-      - name: West build
-        run: |
-          cd build
-          west build -b nice_nano_v2 -p always
+    - name: West build
+      run: |
+        cd build
+        west build -b nice_nano_v2 -p always
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v3
