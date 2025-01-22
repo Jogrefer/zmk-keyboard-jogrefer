@@ -10,18 +10,30 @@
 ---
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    # - name: zmkfirmware
+      # url-base: https://github.com/zmkfirmware
     - name: zephyrproject-rtos
       url-base: https://github.com/zephyrproject-rtos
   projects:
-    - name: zmk-config
-      remote: zmkfirmware
-      revision: main
+    # - name: zmk-config
+    #   remote: zmkfirmware
+    #   revision: main
     - name: zephyr
       remote: zephyrproject-rtos
       revision: main
       path: zephyr
+
+manifest:
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: v3.4.0 # o la versión que necesites
+      path: zephyr
+
 # include:
 #   - board: nice_nano_v2
 #     shield: jogrefer

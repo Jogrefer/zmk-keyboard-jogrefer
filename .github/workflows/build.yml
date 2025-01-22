@@ -33,6 +33,7 @@ jobs:
       - name: West update
         run: |
           tree
+          pwd
           west -v update
       - name: Build
         run: |
