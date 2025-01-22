@@ -27,18 +27,19 @@ jobs:
           sudo apt-get -f install
       - name: Initialize west and Folder Structure
         run: |
-          tree
           cd zmk-config
-          west init -l
-          west manifest.path zmk-config
+          tree
+          west -v init -l
+          west -v config manifest.path zmk-config
           cd ..
       - name: West update
         run: |
-          west update
-      - name: West build
+          cd zmk-config
+          west -v update
+      - name: Build
         run: |
           cd zmk-config
-          west build -b nice_nano_v2 -p always
+          west -v build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
         with:
