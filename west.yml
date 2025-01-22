@@ -18,7 +18,6 @@ manifest:
     - name: zmk-config
       remote: zmkfirmware
       revision: main
-      path: .
     - name: zephyr
       remote: zephyrproject-rtos
       revision: main

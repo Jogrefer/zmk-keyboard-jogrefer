@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -25,15 +25,17 @@ jobs:
           sudo apt-get -f install
       - name: Initialize west
         run: |
+          cd zmk-config
           west init -l .
           west config manifest.path ../west.yml
+          cd ..
       - name: West update
         run: |
-          cd .
+          cd zmk-config
           west -v update
       - name: West build
         run: |
-          cd build
+          cd zmk-config
           west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
