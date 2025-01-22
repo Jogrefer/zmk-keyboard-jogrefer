@@ -1,5 +1,18 @@
 name: Build ZMK Firmware
 
+manifest:
+  version: 0.7
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+  projects:
+    - name: zephyr
+      repo-path: zephyr
+      revision: main
+      import: true
+  self:
+    path: .
+
 on:
   push:
     branches:
