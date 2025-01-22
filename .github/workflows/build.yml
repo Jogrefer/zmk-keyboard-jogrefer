@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code #repository
+    - name: Checkout repository #code
       uses: actions/checkout@v3
       with:
         path: zmk-config  # Clona el repositorio directamente en $GITHUB_WORKSPACE
