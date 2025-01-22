@@ -26,7 +26,7 @@ jobs:
       - name: Initialize west
         run: |
           west init -l .
-          west config manifest.path ../build
+          west config manifest.path ../build/west.yml
       - name: West update
         run: |
           cd .
