@@ -29,14 +29,15 @@ jobs:
       - name: Initialize west and Folder Structure
         run: |
           cd zmk-config
-          west -v init -l
+          west init -l
           pwd
-          west -v config manifest.path zmk-config
+          west config manifest.path zmk-config
       - name: West update
-        run: west -v update
+        run: west update
       - name: Build
         run: |
           pwd
+          cd zmk-config
           west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
