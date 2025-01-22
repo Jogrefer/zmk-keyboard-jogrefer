@@ -45,7 +45,7 @@ jobs:
       - name: West build
         run: |
           cd $GITHUB_WORKSPACE/zmk-config
-          west build -b nrf52840dongle_nrf52840 -p always
+          west build -b nice_nano_v2 -p always
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v3
