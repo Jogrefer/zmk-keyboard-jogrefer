@@ -28,12 +28,12 @@ jobs:
       - name: Initialize west and Folder Structure
         run: |
           cd zmk-config
-          tree
           west -v init -l
-          west -v config manifest.file="west.yml"
+          west -v config manifest.path zmk-config
           cd ..
       - name: West update
         run: |
+          tree
           west -v update
       - name: Build
         run: |
