@@ -28,7 +28,7 @@ jobs:
       - name: Initialize west
         run: |
           cd zmk-config
-          west init -l .
+          west init -l
           west config manifest.path west.yml
           cd ..
       - name: West update
