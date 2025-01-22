@@ -37,6 +37,7 @@ jobs:
           west -v update
       - name: Build
         run: |
+          cd zmk-config
           west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
