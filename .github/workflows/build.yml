@@ -26,7 +26,6 @@ jobs:
         pip3 install -U west
         sudo apt-get -f install
       # sudo apt install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util dtc wget
-
     - name: Initialize west
       run: |
         west init -l zmk-config
