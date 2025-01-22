@@ -35,7 +35,7 @@ jobs:
       - name: West update
         run: |
           west update
-          west zephyr-export
+#          west zephyr-export
       - name: Build
         run: |
           west build -b nice_nano_v2 -p always
