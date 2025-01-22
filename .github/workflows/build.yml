@@ -25,7 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install -U west
           sudo apt-get -f install
-      - name: Initialize west
+      - name: Initialize west and Folder Structure
         run: |
           tree
           cd zmk-config
@@ -34,7 +34,6 @@ jobs:
           cd ..
       - name: West update
         run: |
-          cd zmk-config
           west update
       - name: West build
         run: |
