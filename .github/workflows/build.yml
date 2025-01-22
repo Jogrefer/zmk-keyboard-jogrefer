@@ -30,11 +30,8 @@ jobs:
           cd zmk-config
           west -v init -l
           west -v config manifest.path zmk-config
-          cd ..
       - name: West update
         run: |
-          cd ..
-          cd ..
           pwd
           tree
           west -v update
