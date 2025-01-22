@@ -16,6 +16,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: zmk-config
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout zmkfirmware
+        run: |
+          git clone https://github.com/zmkfirmware/zmkfirmware.git
+          cd zmkfirmware
+          git fetch --tags --force origin main
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
