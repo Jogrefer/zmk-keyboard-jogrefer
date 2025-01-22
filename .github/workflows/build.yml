@@ -34,7 +34,7 @@ jobs:
       - name: West update
         run: |
           cd zmk-config
-          west -v update --path "/home/runner/work/zmk-config/zmk-config"
+          west update
       - name: West build
         run: |
           cd zmk-config
