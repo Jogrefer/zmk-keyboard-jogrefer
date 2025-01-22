@@ -29,7 +29,7 @@ jobs:
     - name: Initialize west
       run: |
         west init -l zmk-config
-        west config manifest.path ../west.yml
+        west config manifest.path $GITHUB_WORKSPACE/west.yml
         cd ..
 
     - name: West update
