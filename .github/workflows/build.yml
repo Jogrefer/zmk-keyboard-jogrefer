@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-# with:
-# path: zmk-config
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -27,19 +25,14 @@ jobs:
           sudo apt-get -y -f install
           pip3 install -U west
           pwd
-# pip3 install -r zephyr/scripts/requirements-base.txt
       - name: Initialize west and Folder Structure
         run: |
-# cd zmk-config
-# west init -l .
-          west init -l # zmk-config
-# west config manifest.path zmk-config
+          west init -l
           pwd
       - name: West update
         run: |
           west update
           pwd
-# west zephyr-export
       - name: Build
         run: |
           pwd
