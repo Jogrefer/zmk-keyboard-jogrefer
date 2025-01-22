@@ -30,13 +30,12 @@ jobs:
       - name: Initialize west and Folder Structure
         run: |
           cd zmk-config
-          west init -l app/
+          west init -l .
           west config manifest.path zmk-config
       - name: West update
         run: |
           west update
           west zephyr-export
-
       - name: Build
         run: |
           west build -b nice_nano_v2 -p always
