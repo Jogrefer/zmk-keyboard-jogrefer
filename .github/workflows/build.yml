@@ -27,7 +27,7 @@ jobs:
           sudo apt-get -f install
       - name: Initialize west
         run: |
-          cd ..
+          cd /
           west init -l
           cd ..
       - name: West update
