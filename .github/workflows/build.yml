@@ -12,20 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    manifest:
-      version: 0.7
-      remotes:
-        - name: zephyrproject-rtos
-          url-base: https://github.com/zephyrproject-rtos
-      projects:
-        - name: zephyr
-          repo-path: zephyr
-          revision: main
-          import: true
-      self:
-        path: .
-
-  steps:
+    steps:
     - name: Checkout repository #code
       uses: actions/checkout@v3
       with:
