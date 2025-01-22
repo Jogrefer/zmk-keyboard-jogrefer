@@ -20,7 +20,7 @@ manifest:
     #   revision: main
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: main
+      revision: 3.5.0
       path: zephyr
 
 manifest:
@@ -31,7 +31,7 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: main
+      revision: v3.5.0
       path: zephyr
 
 # include:
