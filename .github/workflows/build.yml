@@ -2,11 +2,9 @@ name: Build ZMK Firmware
 
 on:
   push:
-    branches:
-      - jogrefer-layout-v1  # Replace 'main' with your branch name if different
+    branches: [ "jogrefer-layout-v1" ]  # Replace 'main' with your branch name if different
   pull_request:
-    branches:
-      - jogrefer-layout-v1  # Replace 'main' with your branch name if different
+    branches: [ "jogrefer-layout-v1" ]  # Replace 'main' with your branch name if different
 
 jobs:
   build:
@@ -14,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout repository #code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: zmk-config  # Clona el repositorio directamente en $GITHUB_WORKSPACE
 
@@ -27,7 +25,7 @@ jobs:
       run: |
         pip install west
         sudo apt-get update
-      # python -m pip install --upgrade pip
+        python -m pip install --upgrade pip
         sudo apt-get install -y git ninja-build flex bison gperf libfl-dev zlib1g-dev libncurses5-dev dfu-util device-tree-compiler wget
 
     - name: Initialize west
@@ -39,16 +37,16 @@ jobs:
 
       - name: West update
         run: |
-          cd $GITHUB_WORKSPACE/zmk-config
+          cd $GITHUB_WORKSPACE
           west update
 
       - name: West build
         run: |
-          cd $GITHUB_WORKSPACE/zmk-config
+          cd $GITHUB_WORKSPACE/build
           west build -b nice_nano_v2 -p always
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v3
       with:
         name: zmk-firmware
-        path: zmk-config/build/zephyr/zmk.uf2
+        path: build/jogrefer.uf2

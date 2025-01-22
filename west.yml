@@ -11,7 +11,7 @@
 #     artifact-name: corne_left_with_logging
 #
 include:
-  - board: nrf52840_m2
+  - board: nice_nano_v2 #nrf52840_m2
     shield: jogrefer
     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
     artifact-name: jogrefer
