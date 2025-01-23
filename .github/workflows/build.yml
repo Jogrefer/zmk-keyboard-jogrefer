@@ -47,7 +47,7 @@ jobs:
         run: |
           pwd
           tree -L 1 .
-          west build -b nice_nano_v2 -p always
+          west build -d /build -p -b nice_nano_v2 -- -DCONFIG_ZMK_SLEEP=y -DSHIELD=kyra_left -DZMK_CONFIG=/zmk-config/config/
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
         with:
