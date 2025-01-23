@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          path: zmk-config
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -29,8 +27,7 @@ jobs:
           pwd
       - name: Initialize west and Folder Structure
         run: |
-          cd zmk-config
-          west init -l .
+          west init -l ..
           pwd
       - name: West update
         run: |
