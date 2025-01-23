@@ -36,8 +36,11 @@ jobs:
       - name: Build
         run: |
           ls -a
+          echo ·
           cd ..
-          west build -b nice_nano_v2 -p always --path "zmk-config"
+          ls -a
+          echo ·
+          west build -b nice_nano_v2 -p always --path "zmk-config/zmk-config"
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
         with:
