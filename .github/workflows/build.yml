@@ -35,7 +35,8 @@ jobs:
           pwd
       - name: Build
         run: |
-          west build -b nice_nano_v2 -p always --path "zmk-config/zmk-config"
+          cd zmk-config
+          west build -b nice_nano_v2 -p always --path zmk-config/zmk-config
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
         with:
