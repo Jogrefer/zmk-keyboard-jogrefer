@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          path: zmk-config
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -27,15 +29,18 @@ jobs:
           pwd
       - name: Initialize west and Folder Structure
         run: |
-          west init -l
+          cd zmk-config
+          west init -l .
           pwd
       - name: West update
         run: |
           west update
           pwd
+      - name: DEBUG
+        run: west -vv status
       - name: Build
         run: |
-          west -vv status
+          cd zmk-config
           west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
