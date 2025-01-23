@@ -27,8 +27,9 @@ jobs:
           pwd
       - name: Initialize west and Folder Structure
         run: |
-          cd ..
           west init -l .
+          pwd
+          cd ..
           pwd
       - name: West update
         run: |
