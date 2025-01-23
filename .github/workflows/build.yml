@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: true 
+        path: .
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -31,10 +32,12 @@ jobs:
         run: |
           west init -l .
           pwd
+          tree -L 1 .
           cd ..
           pwd
       - name: West update
         run: |
+          cd .
           west update
           pwd
       - name: DEBUG
