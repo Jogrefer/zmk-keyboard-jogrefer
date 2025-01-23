@@ -27,6 +27,7 @@ jobs:
           pwd
       - name: Initialize west and Folder Structure
         run: |
+          cd ..
           west init -l .
           pwd
       - name: West update
@@ -37,7 +38,6 @@ jobs:
         run: west -vv status
       - name: Build
         run: |
-          cd ..
           west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
