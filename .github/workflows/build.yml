@@ -31,13 +31,13 @@ jobs:
           pwd
       - name: West update
         run: |
-          west update
+          west update --path "zmk-config"
           pwd
       - name: Build
         run: |
           ls -a
           cd ..
-          west build -b nice_nano_v2 -p always
+          west build -b nice_nano_v2 -p always --path "zmk-config"
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
         with:
