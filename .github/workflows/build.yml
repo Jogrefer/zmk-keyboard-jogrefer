@@ -35,6 +35,7 @@ jobs:
           pwd
       - name: Build
         run: |
+          west -vv status
           west build -b nice_nano_v2 -p always
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v3
