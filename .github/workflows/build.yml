@@ -59,6 +59,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - ssh.yaml
       - config/west.yml
       - boards/shields/jogrefer/**
       - config/*.conf

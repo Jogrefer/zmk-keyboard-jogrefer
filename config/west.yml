@@ -12,20 +12,20 @@
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: jogrefer
 ---
-    manifest:
-      remotes:
-        - name: zmkfirmware
-          url-base: https://github.com/zmkfirmware
-        - name: zephyrproject-rtos
-          url-base: https://github.com/zephyrproject-rtos
-      projects:
-        - name: zmk-config
-          remote: zmkfirmware
-          revision: main
-          import: app/west.yml
-        - name: zephyr
-          remote: zephyrproject-rtos
-          revision: main
-          path: zephyr
-      self:
-        path: config
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+  projects:
+    - name: zmk-config
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: main
+      path: zephyr
+  self:
+    path: config
