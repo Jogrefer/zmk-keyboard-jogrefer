@@ -52,7 +52,7 @@
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: zmk-firmware
-#          path: zmk-config/build/jogrefer.uf2
+#          path: zmk-config/build/jogrefer.uf2 
 
 name: Build ZMK firmware
 on:
