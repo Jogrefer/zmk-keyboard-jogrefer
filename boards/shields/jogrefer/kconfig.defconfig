@@ -1,0 +1,6 @@
+if SHIELD_JOGREFER
+
+config ZMK_KEYBOARD_NAME
+    default "jogrefer"
+
+endif
