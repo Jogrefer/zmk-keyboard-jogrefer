@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - config/west.yml
+      - zephyr/module.yml
       - boards/shields/jogrefer/**
       - config/*.conf
       - boards/**
