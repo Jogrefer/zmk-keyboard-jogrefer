@@ -21,13 +21,13 @@
 	};
 
 	kscan0: kscan {
-		compatible = "zmk-kscan-gpio-matrix";
+		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "col2row";
+		wakeup-source;
+		toggle-mode;
 		debounce-scan-period-ms = <3>;
 		poll-period-ms = <30>;
 		init-delay-ms = <1000>;
-		toggle-mode;
-		wakeup-source;
 		col-gpios =
 //																								06 08 17 20 22 24 100
 		<&gpio P0.06 GPIO_ACTIVE_HIGH>, 			// colunma 1 de la izq		╭────────────────────╮					&gpio P0.06			<&gpio0 6
