@@ -3,7 +3,6 @@ id: jogrefer
 name: Jogrefer
 type: shield
 url: https://github.com/Jogrefer/zmk-config-jogrefer
-requires:
-  - nice_nano_v2
+requires: [nice_nano_v2]
 features:
   - keys
