@@ -11,9 +11,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-#    - name: zephyr
-#      remote: zephyrproject-rtos
-#      revision: main
-#      path: zephyr
+    - name: zmk-config-jogrefer
+      revision: main
+      import: .
   self:
     path: config
