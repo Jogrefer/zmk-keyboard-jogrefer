@@ -4,15 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
 #   - name: zephyrproject-rtos
 #     url-base: https://github.com/zephyrproject-rtos
-    - name: zmk-config-jogrefer
-      url-base: https://github.com/Jogrefer/zmk-config-jogrefer
+#   - name: zmk-config-jogrefer
+#     url-base: https://github.com/Jogrefer/zmk-config-jogrefer
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-config-jogrefer
-      revision: main
-      import: .
   self:
     path: config
