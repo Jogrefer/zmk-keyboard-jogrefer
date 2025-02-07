@@ -2,10 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-#   - name: zephyrproject-rtos
-#     url-base: https://github.com/zephyrproject-rtos
-#   - name: zmk-config-jogrefer
-#     url-base: https://github.com/Jogrefer/zmk-config-jogrefer
+   - name: zephyrproject-rtos
+     url-base: https://github.com/zephyrproject-rtos
+    - name: zmk-config-jogrefer
+      url-base: https://github.com/Jogrefer/zmk-config-jogrefer
   projects:
     - name: zmk
       remote: zmkfirmware
