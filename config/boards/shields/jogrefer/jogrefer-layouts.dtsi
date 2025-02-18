@@ -5,7 +5,7 @@
         compatible = "zmk,physical-layout";
         display-name = "Default";
 
-        keys  //                     w   h    x    y     rot    rx    ry
+        keys  //                     w   h    x    y      r     rx    ry
             = <&key_physical_attrs 100 100    0    0      0     0     0>
             , <&key_physical_attrs 100 100    0    0      0     0     0>
             , <&key_physical_attrs 100 100    0    0      0     0     0>
