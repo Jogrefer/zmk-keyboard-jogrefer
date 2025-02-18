@@ -1,8 +1,9 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <jogrefer-layouts.dtsi>
+#include <jogrefer.dtsi>
 
 &physical_layout0 {
-    transform = <&matrix_transform0>;
+	transform = <&matrix_transform0>;
 };
 
 / {
