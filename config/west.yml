@@ -6,9 +6,6 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      import:
-        - app/west.yml
-        - app/CMakeLists.txt
-        - app/Kconfig
+      import: app/west.yml
   self:
     path: config
