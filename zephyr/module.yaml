@@ -1,7 +1,7 @@
 name: zmk-keyboard-jogrefer
 build:
 #  depends:
-  cmake: .
+  cmake: https://github.com/zmkfirmware/zmk/blob/main/app
   settings:
     board_root: .
     dts_root: .

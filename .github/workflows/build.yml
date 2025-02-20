@@ -18,8 +18,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      cache: |
-        - key: Linux-build-cache-zephyr-3.5.0-modules-${{ hashFiles('**/module.yml') }}
-          restore-keys: Linux-build-cache-zephyr-3.5.0-modules-
-          fail-on-cache-miss: false
