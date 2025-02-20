@@ -1,0 +1,7 @@
+name: zmk-keyboard-jogrefer
+build:
+#  depends:
+  cmake: .
+  settings:
+    board_root: .
+    dts_root: .
