@@ -17,22 +17,22 @@
 		poll-period-ms = <30>;
 		init-delay-ms = <1000>;
 		col-gpios =
-//																															 06 08 17 20 22 24 100
-		<&gpio P0.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 1 de la izq		╭───────────────────╮					<&gpio0 6
-		<&gpio P0.08 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 2 de la izq		│  ×  1  2  3  4  5 │		113		<&gpio0 8
-		<&gpio P0.17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 3 de la izq		│  ⭾  F  M  N  G  X ╰─		111		<&gpio0 17
-		<&gpio P0.20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 4 de la izq		│  ⇪  D  T  R  S  L  Ç		10			<&gpio0 20
-		<&gpio P0.22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 5 de la izq		│  ´  Z  Q  H  C  K  [		09			<&gpio0 22
-		<&gpio P0.24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 6 de la izq		│  ⌗  ⌃  ⌥  ⌘  ␣  ←  ]		101		<&gpio0 24
-		<&gpio P1.00 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 7 de la izq		╰──────────────────────					<&gpio1 0
-//																															 11 104 106 31 29 02 115
-		<&gpio P0.11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 1 de la der		  ╭────────────────────╮				<&gpio0 11
-		<&gpio P1.04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 2 de la der		  │  6  7  8  9  0  \  │	113		<&gpio1 4
-		<&gpio P1.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 3 de la der		──╯  W  V  B  P  Y  -  │	111		<&gpio1 6
-		<&gpio P0.31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 4 de la der		  ⏍  U  A  E  O  I  +  │	10			<&gpio0 31
-		<&gpio P0.29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 5 de la der		  <  Ñ  J  ,  .  /  ⇪  │	09			<&gpio0 29
-		<&gpio P0.02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 			// colunma 6 de la der		  ⌘  ↩︎  ␣  ←  ↑  ↓  →  │	101		<&gpio0 2
-		<&gpio P1.15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; 			// colunma 7 de la der		───────────────────────╯				<&gpio1 15
+//																													 06 08 17 20 22 24 100
+		<&gpio P0.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 1 de la izq		╭───────────────────╮					<&gpio0 6
+		<&gpio P0.08 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 2 de la izq		│  ×  1  2  3  4  5 │		113		<&gpio0 8
+		<&gpio P0.17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 3 de la izq		│  ⭾  F  M  N  G  X ╰─		111		<&gpio0 17
+		<&gpio P0.20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 4 de la izq		│  ⇪  D  T  R  S  L  Ç		10			<&gpio0 20
+		<&gpio P0.22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 5 de la izq		│  ´  Z  Q  H  C  K  [		09			<&gpio0 22
+		<&gpio P0.24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 6 de la izq		│  ⌗  ⌃  ⌥  ⌘  ␣  ←  ]		101		<&gpio0 24
+		<&gpio P1.00 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 7 de la izq		╰──────────────────────					<&gpio1 0
+//																													 11 104 106 31 29 02 115
+		<&gpio P0.11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 1 de la der		  ╭────────────────────╮				<&gpio0 11
+		<&gpio P1.04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 2 de la der		  │  6  7  8  9  0  \  │	113		<&gpio1 4
+		<&gpio P1.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 3 de la der		──╯  W  V  B  P  Y  -  │	111		<&gpio1 6
+		<&gpio P0.31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 4 de la der		  ⏍  U  A  E  O  I  +  │	10			<&gpio0 31
+		<&gpio P0.29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 5 de la der		  <  Ñ  J  ,  .  /  ⇪  │	09			<&gpio0 29
+		<&gpio P0.02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, 	// colunma 6 de la der		  ⌘  ↩︎  ␣  ←  ↑  ↓  →  │	101		<&gpio0 2
+		<&gpio P1.15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; 	// colunma 7 de la der		───────────────────────╯				<&gpio1 15
 
 		row-gpios = 
 		<&gpio P1.13 GPIO_ACTIVE_HIGH>, //Fila 1	─╮			<&gpio1 13
