@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <input/processors.dtsi>
 #include <definitions.dtsi>
-#include <jogrefer-layouts.dtsi>
 #include <jogrefer.overlay>
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 #include <dt-bindings/zmk/pointing.h>
