@@ -2,6 +2,6 @@ file_format: "1"
 id: jogrefer
 name: jogrefer
 type: shield
-url: https://github.com/Jogrefer/zmk-config-jogrefer
+url: https://github.com/Jogrefer/zmk-keyboard-jogrefer
 requires: [nice_nano_v2]
 features: keys
