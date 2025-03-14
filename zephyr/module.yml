@@ -1,5 +1,4 @@
 name: zmk-keyboard-jogrefer
 build:
-  kconfig: Kconfig  # Hasta que confirme que tengo que eliminarlo.
   settings:
     board_root: .
