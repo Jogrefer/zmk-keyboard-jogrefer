@@ -6,12 +6,10 @@
 		zmk,matrix-transform = &default_transform;
 	};
 
-	kscan0: kscan0 {
+	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "row2col";
 		wakeup-source;
-		poll-period-ms = <30>;
-		init-delay-ms = <1000>;
 
 		row-gpios
 			= <&gpio P1.13 GPIO_ACTIVE_HIGH>									// f1													<&gpio1 13
