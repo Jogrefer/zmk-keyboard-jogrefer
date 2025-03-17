@@ -1,9 +1,9 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-
 	chosen {
 		zmk,kscan = &kscan0;
+		zmk,matrix-transform = &default_transform;
 	};
 
 	kscan0: kscan0 {
@@ -13,28 +13,30 @@
 		poll-period-ms = <30>;
 		init-delay-ms = <1000>;
 
-		col-gpios =
-			<&gpio P0.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c1-izq		╭───────────────────╮		<&gpio0 6
-			<&gpio P0.08 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c2-izq		│  ×  1  2  3  4  5 │		<&gpio0 8
-			<&gpio P0.17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c3-izq		│  ⭾  F  M  N  G  X ╰─		<&gpio0 17
-			<&gpio P0.20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c4-izq		│  ⇪  D  T  R  S  L  Ç		<&gpio0 20
-			<&gpio P0.22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c5-izq		│  ´  Z  Q  H  C  K  [		<&gpio0 22
-			<&gpio P0.24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c6-izq		│  ⌗  ⌃  ⌥  ⌘  ␣  ←  ]		<&gpio0 24
-			<&gpio P1.00 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c7-izq		╰──────────────────────		<&gpio1 0
-			<&gpio P0.11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c1-der		  ╭────────────────────╮	<&gpio0 11
-			<&gpio P1.04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c2-der		  │  6  7  8  9  0  \  │	<&gpio1 4
-			<&gpio P1.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c3-der		──╯  W  V  B  P  Y  -  │	<&gpio1 6
-			<&gpio P0.31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c4-der		  ⏍  U  A  E  O  I  +  │	<&gpio0 31
-			<&gpio P0.29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c5-der		  <  Ñ  J  ,  .  /  ⇪  │	<&gpio0 29
-			<&gpio P0.02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,		// c6-der		  ⌘  ↩︎  ␣  ←  ↑  ↓  →  │	<&gpio0 2
-			<&gpio P1.15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;		// c7-der		───────────────────────╯	<&gpio1 15
+		row-gpios
+			= <&gpio P1.13 GPIO_ACTIVE_HIGH>									// f1													<&gpio1 13
+			, <&gpio P1.11 GPIO_ACTIVE_HIGH>									// f2													<&gpio1 11
+			, <&gpio P0.10 GPIO_ACTIVE_HIGH>									// f3													<&gpio0 10
+			, <&gpio P0.09 GPIO_ACTIVE_HIGH>									// f4													<&gpio0 9
+			, <&gpio P1.01 GPIO_ACTIVE_HIGH>									// f5													<&gpio1 1
+			;
 
-		row-gpios = 
-			<&gpio P1.13 GPIO_ACTIVE_HIGH>, 								// f1													<&gpio1 13
-			<&gpio P1.11 GPIO_ACTIVE_HIGH>, 								// f2													<&gpio1 11
-			<&gpio P0.10 GPIO_ACTIVE_HIGH>, 								// f3													<&gpio0 10
-			<&gpio P0.09 GPIO_ACTIVE_HIGH>, 								// f4													<&gpio0 9
-			<&gpio P1.01 GPIO_ACTIVE_HIGH>; 								// f5													<&gpio1 1
+		col-gpios
+			= <&gpio P0.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c1-izq		╭───────────────────╮		<&gpio0 6
+			, <&gpio P0.08 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c2-izq		│  ×  1  2  3  4  5 │		<&gpio0 8
+			, <&gpio P0.17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c3-izq		│  ⭾  F  M  N  G  X ╰─		<&gpio0 17
+			, <&gpio P0.20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c4-izq		│  ⇪  D  T  R  S  L  Ç		<&gpio0 20
+			, <&gpio P0.22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c5-izq		│  ´  Z  Q  H  C  K  [		<&gpio0 22
+			, <&gpio P0.24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c6-izq		│  ⌗  ⌃  ⌥  ⌘  ␣  ←  ]		<&gpio0 24
+			, <&gpio P1.00 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c7-izq		╰──────────────────────		<&gpio1 0
+			, <&gpio P0.11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c1-der		  ╭────────────────────╮	<&gpio0 11
+			, <&gpio P1.04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c2-der		  │  6  7  8  9  0  \  │	<&gpio1 4
+			, <&gpio P1.06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c3-der		──╯  W  V  B  P  Y  -  │	<&gpio1 6
+			, <&gpio P0.31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c4-der		  ⏍  U  A  E  O  I  +  │	<&gpio0 31
+			, <&gpio P0.29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c5-der		  <  Ñ  J  ,  .  /  ⇪  │	<&gpio0 29
+			, <&gpio P0.02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c6-der		  ⌘  ↩︎  ␣  ←  ↑  ↓  →  │	<&gpio0 2
+			, <&gpio P1.15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>		// c7-der		───────────────────────╯	<&gpio1 15
+			;
 	};
 
 	default_transform: matrix_transform {
