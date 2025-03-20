@@ -4,8 +4,7 @@
 / {
 	keymap {
 		compatible = "zmk,keymap";
-
-		default_layer {
+		default {
 			/* ╭────────────────────╮   ╭────────────────────╮
 				│  ×  1  2  3  4  5	│   │  6  7  8  9  0  \  │
 				│  ⭾  F  M  N  G  X	╰───╯  W  V  B  P  Y  -  │
@@ -14,12 +13,12 @@
 				│  m  ⌃  ⌥  ⌘  ␣  ←  ]   ⌘  ↩︎  ␣  ←  ↑  ↓  →  │
 				╰─────────────────────────────────────────────╯ */
 			bindings = <
-				&kp ESC       &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                               &kp N6     &kp N7     &kp N8     &kp N9    &kp N0     &kp NUBS
-				&kp TAB       &kp F      &kp M     &kp N     &kp G      &kp X                                &kp W      &kp V      &kp B      &kp P     &kp Y      &kp MINUS
-				&kp CAPSLOCK  &kp D      &kp T     &kp R     &kp S      &kp L          &kp TILDE  &none      &kp U      &kp A      &kp E      &kp O     &kp I      &kp PLUS
-				&kp GRAVE     &kp Z      &kp Q     &kp H     &kp C      &kp K          &kp LBKT   &kp EQUAL  &kp N      &kp J      &kp COMMA  &kp DOT   &kp SLASH  &kp RSHIFT
-				&kp GLOBE     &kp LCTRL  &kp LALT  &kp LCMD  &kp SPACE  &kp BACKSPACE  &kp RBKT   &kp RCMD   &kp ENTER  &kp SPACE  &kp LEFT   &kp UP    &kp DOWN   &kp RIGHT
+				&kp ESC      &kp N1    &kp N2   &kp N3   &kp N4    &kp N5                            &kp N6    &kp N7    &kp N8    &kp N9   &kp N0    &kp NUBS
+				&kp TAB      &kp F     &kp M    &kp N    &kp G     &kp X                             &kp W     &kp V     &kp B     &kp P    &kp Y     &kp MINUS
+				&kp CAPSLOCK &kp D     &kp T    &kp R    &kp S     &kp L         &kp TILDE &none     &kp U     &kp A     &kp E     &kp O    &kp I     &kp PLUS
+				&kp GRAVE    &kp Z     &kp Q    &kp H    &kp C     &kp K         &kp LBKT  &kp EQUAL &kp N     &kp J     &kp COMMA &kp DOT  &kp SLASH &kp RSHIFT
+				&kp GLOBE    &kp LCTRL &kp LALT &kp LCMD &kp SPACE &kp BACKSPACE &kp RBKT  &kp RCMD  &kp ENTER &kp SPACE &kp LEFT  &kp UP   &kp DOWN  &kp RIGHT
 			>;
 		};
-	};
+	}
 };
