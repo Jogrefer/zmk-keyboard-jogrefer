@@ -24,8 +24,8 @@
 		diode-direction = "col2row";
 		wakeup-source;
 		debounce-press-ms = <20>;
-		debounce-release-ms = <10>;
-		debounce-scan-period-ms = <2>;
+		debounce-release-ms = <20>;
+		debounce-scan-period-ms = <10>;
 		poll-period-ms = <100>;
 
 		row-gpios
