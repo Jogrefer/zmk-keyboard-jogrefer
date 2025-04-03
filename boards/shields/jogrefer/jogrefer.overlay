@@ -25,7 +25,7 @@
 		wakeup-source;
 		debounce-press-ms = <20>;
 		debounce-release-ms = <20>;
-		debounce-scan-period-ms = <10>;
+		debounce-scan-period-ms = <20>;
 		poll-period-ms = <100>;
 
 		row-gpios
